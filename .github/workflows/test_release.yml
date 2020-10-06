@@ -18,4 +18,4 @@ jobs:
     - name: rename
       run : ren LucaSystemTools/LucaSystemTools/bin/Release/netcoreapp3.1/ LucaSystemTool
     - name: 7zip release
-      run : 7z a -t7z -mx=9 LucaSystemTool_release.7z .\LucaSystemTools\bin\Release\
+      run : 7z a -t7z -mx=9 LucaSystemTool_release.7z LucaSystemTools/LucaSystemTools/bin/Release/
