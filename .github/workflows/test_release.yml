@@ -10,15 +10,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.301 
+      with: {dotnet-version: 3.1.301}
     - name: Install dependencies
       run: cd LucaSystemTools/LucaSystemTools && dotnet restore
     - name: Build
       run: cd LucaSystemTools/LucaSystemTools && dotnet build --configuration Release --no-restore
-    - name: zip release
-      run : ren LucaSystemTools\bin\Release\netcoreapp3.1 LucaSystemTool
-    - uses: edgarrc/action-7z@v1.0.4
-      with:
-        args: 7z a -t7z -mx=9 LucaSystemTool_release.7z .\LucaSystemTools\bin\Release\
-      
+    - name: rename
+      run : ren LucaSystemTools/LucaSystemTools/LucaSystemTools/bin/Release/netcoreapp3.1 LucaSystemTool
+    - name: 7zip release
+      uses: edgarrc/action-7z@v1.0.4
+      with:  {args: 7z a -t7z -mx=9 LucaSystemTool_release.7z .\LucaSystemTools\bin\Release\}
