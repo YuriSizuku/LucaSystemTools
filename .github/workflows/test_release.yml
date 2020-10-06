@@ -1,4 +1,4 @@
-name: test
+name: test_release
 on:
   push:
     branches: [ dev ]
@@ -10,5 +10,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: echo hello 
-      run: echo hello world!
+    - run: cd
+     
