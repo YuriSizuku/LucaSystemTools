@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-           TEST_SECRET = ${{secrets.TEST_SECRET}}
+           TEST_SECRET = ${{ secrets.TEST_SECRET }}
         run: |
           echo $TEST_SECRET
