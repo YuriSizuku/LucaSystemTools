@@ -2,7 +2,7 @@ name: test_release
 on:
   push:
     branches: [ dev ]
-    
+    tags: ['v*'] # Push events to matching v*, i.e. v1.0, v20.15.10
 jobs:
   build_release:
     runs-on: windows-latest
@@ -18,7 +18,7 @@ jobs:
     - name: rename
       run : ren LucaSystemTools/LucaSystemTools/bin/Release/netcoreapp3.1/ LucaSystemTool
     - name: 7zip release
-      run : 7z a -t7z -mx=9 LucaSystemTool_release.7z LucaSystemTools/LucaSystemTools/bin/Release/
+      run : 7z a -t7z -mx=9 LucaSystemTool_release.7z ./LucaSystemTools/LucaSystemTools/bin/Release/LucaSystemTool # must have ., or zip the whole path
     - name: create release
       id: create_release
       uses: actions/create-release@v1
