@@ -8,6 +8,6 @@ jobs:
     steps:
       - shell: bash
         env:
-           test_secret = ${{ secrets.TEST_SECRET }}
+           test_secret = ${{ secrets.TestSecret }}
         run: |
           echo $test_secret
