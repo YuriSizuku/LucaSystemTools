@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
-      - env:
+        env:
            TEST_SECRET = ${{ secrets.TEST_SECRET }}
         run: |
           echo "$TEST_SECRET"
