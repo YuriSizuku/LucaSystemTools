@@ -9,5 +9,7 @@ jobs:
       - shell: bash
         env:
            test_secret : ${{ secrets.TestSecret }}
+           test_secret2: ${{ secrets.TEST_SECRET }}
         run: |
           echo $test_secret
+          cat $test_secret
