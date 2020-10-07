@@ -11,5 +11,5 @@ jobs:
            test_secret : ${{ secrets.TestSecret }}
            test_secret2: ${{ secrets.TEST_SECRET }}
         run: |
-          echo $test_secret
-          cat $test_secret
+          echo "$test_secret"  "$test_secret2"
+          cat "$test_secret"  "$test_secret2"
