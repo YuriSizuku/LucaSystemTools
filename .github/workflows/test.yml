@@ -6,7 +6,8 @@ jobs:
   show_secrets:
     runs-on: ubuntu-latest
     steps:
+      - shell: bash
       - env:
            TEST_SECRET = ${{ secrets.TEST_SECRET }}
         run: |
-          echo $TEST_SECRET
+          echo "$TEST_SECRET"
